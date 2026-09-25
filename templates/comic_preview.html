@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ComicCraft - Preview</title>
+
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #f5f5f5;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .panel {
+        background: white;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .panel img {
+        display: block;
+        max-width: 100%;
+        width: 700px;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+
+    .no-image {
+        padding: 15px;
+        background: #ffecec;
+        color: #a00;
+        border-radius: 8px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<h1>🎨 Generated Comic</h1>
+
+<h2>{{ comic.title }}</h2>
+
+<p><b>Story:</b> {{ comic.prompt }}</p>
+<p><b>Character:</b> {{ comic.character_name }}</p>
+<p><b>Setting:</b> {{ comic.setting }}</p>
+<p><b>Tone:</b> {{ comic.tone }}</p>
+<p><b>Art Style:</b> {{ comic.art_style }}</p>
+
+<hr>
+
+{% for panel in comic.panels %}
+
+<div class="panel">
+
+```
+<h3>Panel {{ panel.panel_number }}</h3>
+
+<p>{{ panel.description }}</p>
+
+<p>
+    <b>Image Prompt:</b>
+    {{ panel.image_prompt }}
+</p>
+
+{% if panel.image_path %}
+
+    <img
+        src="/{{ panel.image_path }}"
+        alt="Comic Panel {{ panel.panel_number }}"
+    >
+
+{% else %}
+
+    <div class="no-image">
+        ⚠️ Image was not generated for this panel.
+    </div>
+
+{% endif %}
+```
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>

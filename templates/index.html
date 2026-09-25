@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ComicCraft</title>
+</head>
+
+<body>
+
+    <h1>🎨 ComicCraft AI</h1>
+
+    <p>Create your own AI comic story.</p>
+
+    <form action="/generate" method="post">
+
+        <label>Story Prompt:</label><br>
+        <textarea
+            name="story_prompt"
+            rows="4"
+            cols="60"
+            required
+        >A young girl discovers a magical robot and goes on an exciting adventure.</textarea>
+
+        <br><br>
+
+        <label>Character Name:</label><br>
+        <input
+            type="text"
+            name="character_name"
+            value="Maya"
+            required
+        >
+
+        <br><br>
+
+        <label>Setting:</label><br>
+        <input
+            type="text"
+            name="setting"
+            value="A futuristic village"
+            required
+        >
+
+        <br><br>
+
+        <label>Tone:</label><br>
+        <input
+            type="text"
+            name="tone"
+            value="Fun and adventurous"
+            required
+        >
+
+        <br><br>
+
+        <label>Art Style:</label><br>
+        <input
+            type="text"
+            name="art_style"
+            value="Colorful comic book"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            🚀 Generate Comic
+        </button>
+
+    </form>
+
+</body>
+</html>
